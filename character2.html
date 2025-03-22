@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Character Sheet 2</title>
+<link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>	
+	<nav class="navbar"> 
+		<ul class="menu">
+			<!-- All images I used were public domain -->
+			<li class="menuItem"><img src="../eclipseIcon.png" alt="Eclipse Icon" class="icon">
+			<li class="menuItem"><a href="../story.html">Story</a></li>
+			<li class="menuItem"><a href="../notes/notes.html">Notes</a></li>
+			<li class="menuItem"><a href="character1.html">Character 1</a></li>
+			<li class="menuItem"><a class="active" href="character2.html">Character 2</a></li>
+			<li class="menuItem"><a href="character3.html">Character 3</a></li>
+			<li class="menuItemRight"><button type="button" id="save">Save Character Sheet</button></li>
+			<li class="menuItemRight"><a href="https://www.d20herosrd.com">Mutants and Masterminds Rulebook</a></li>
+		</ul>
+	</nav>
+
+	<div class="boxSeparator">
+		<h1>Character Sheet 3<br>----------------------------------------</h1>
+
+		<p>Hero: <span id="heroName" class="editable medium" contenteditable="true"></span> Player: <span id="playerName" class="editable medium" contenteditable="true"></span> Identity: <span id="identity" class="editable medium" contenteditable="true"></span></p>
+
+		<p>Gender: <span id="gender" class="editable medium" contenteditable="true"></span> Age: <span id="age" class="editable small" contenteditable="true"></span> Height: <span id="height" class="editable small" contenteditable="true"></span> Weight: <span id="weight" class="editable small" contenteditable="true"></span> Eyes: <span id="eyes" class="editable medium" contenteditable="true"></span></p>
+
+		<p>Hair: <span id="hair" class="editable medium" contenteditable="true"></span> Group Affiliation: <span id="affiliation" class="editable medium" contenteditable="true"></span> Base of Operations: <span id="base" class="editable medium" contenteditable="true"></span></p>
+
+		<p>Power Level: <span id="PL" class="editable small" contenteditable="true"></span> Power Point Totals: Abilities <span id="abilityPointTotal" class="editable small" contenteditable="true"></span> + Powers <span id="powerPointTotal" class="editable small" contenteditable="true"></span> + Advantages <span id="advantagePointTotal" class="editable small" contenteditable="true"></span> + Skills <span id="skillPointTotal" class="editable small" contenteditable="true"></span> + Defenses <span id="defencePointTotal" class="editable small" contenteditable="true"></span> = <span id="pointTotal" class="editable small" contenteditable="true"></span></p>
+
+		<p>Strength: <span id="strength" class="editable small" contenteditable="true"></span> Stamina: <span id="stamina" class="editable small" contenteditable="true"></span> Agility: <span id="agility" class="editable small" contenteditable="true"></span> Dexterity: <span id="dexterity" class="editable small" contenteditable="true"></span> Fighting: <span id="fighting" class="editable small" contenteditable="true"></span> Intellect: <span id="intellect" class="editable small" contenteditable="true"></span> Awareness: <span id="awareness" class="editable small" contenteditable="true"></span> Presence: <span id="presence" class="editable small" contenteditable="true"></span></p>
+
+		<p>Offence: <span id="offenceName1" class="editable medium" contenteditable="true"></span> <span id="offenceMod1" class="editable small" contenteditable="true"></span> <span id="offenceDescription1" class="editable medium" contenteditable="true"></span> <span id="offenceName2" class="editable medium" contenteditable="true"></span> <span id="offenceMod2" class="editable small" contenteditable="true"></span> <span id="offenceDescription2" class="editable medium" contenteditable="true"></span> <br> <br> <span id="offenceName3" class="editable medium" contenteditable="true"></span> <span id="offenceMod3" class="editable small" contenteditable="true"></span> <span id="offenceDescription3" class="editable medium" contenteditable="true"></span> <span id="offenceName4" class="editable medium" contenteditable="true"></span> <span id="offenceMod4" class="editable small" contenteditable="true"></span> <span id="offenceDescription4" class="editable medium" contenteditable="true"></span>
+
+		<p>Initiative: <span id="initiative" class="editable small" contenteditable="true"></span> Hero Points: <span id="heroPoints" class="editable small" contenteditable="true"></span> Power Points Earned: <span id="ppEarned" class="editable small" contenteditable="true"></span> Power Points Spent: <span id="ppSpent" class="editable small" contenteditable="true"></span></p>
+
+		<p><br>Powers and Devices: <br> <br> <span id="powerAndDevices" class="editable large" contenteditable="true"></span><br><br></p>
+
+		<p>Equipment: <br> <br> <span id="equipment" class="editable large" contenteditable="true"></span></p>
+
+		<h2>Concept Images<br>----------------------------------------</h2>
+	</div>
+
+	<script>
+		const idArray = ["heroName", "playerName", "identity", "gender", "age", "height", "weight", "eyes", "hair", "affiliation", "base", "PL", "abilityPointTotal", "powerPointTotal", "advantagePointTotal", "skillPointTotal", "defencePointTotal", "pointTotal", "strength", "stamina", "agility", "dexterity", "fighting", "intellect", "awareness", "presence", "offenceName1", "offenceMod1", "offenceDescription1", "offenceName2", "offenceMod2", "offenceDescription2","offenceName3", "offenceMod3", "offenceDescription3", "offenceName4", "offenceMod4", "offenceDescription4", "initiative", "heroPoints", "ppEarned", "ppSpent", "powerAndDevices", "equipment"];
+
+		document.getElementById('save').onclick = function() {
+			for (let i = 0; i < idArray.length; i++) {
+				localStorage.setItem("" + idArray[i] + "ValueSheet2", document.getElementById(idArray[i]).innerHTML)
+				console.log("set item data for" + idArray[i]);
+			}
+		};
+
+		window.onload = function() {
+			for (let i = 0; i < idArray.length; i++) {
+				var currentText = localStorage.getItem("" + idArray[i] + "ValueSheet2");
+				document.getElementById(idArray[i]).innerHTML = currentText;
+			}
+		}
+	</script>
+</body>
+</html>

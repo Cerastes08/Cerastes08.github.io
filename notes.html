@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Notes Page</title>
+<link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>	
+	<nav class="navbar"> 
+		<ul class="menu">
+			<!-- All images I used were public domain -->
+			<li class="menuItem"><img src="../eclipseIcon.png" alt="Eclipse Icon" class="icon">
+			<li class="menuItem"><a href="../story.html">Story</a></li>
+			<li class="menuItem"><a class="active" href="notes.html">Notes</a></li>
+			<li class="menuItem"><a href="../characters/character1.html">Character 1</a></li>
+			<li class="menuItem"><a href="../characters/character2.html">Character 2</a></li>
+			<li class="menuItem"><a href="../characters/character3.html">Character 3</a></li>
+			<li class="menuItemRight"><button type="button" id="save">Save Notes</button></li>
+		</ul>
+	</nav>
+
+	<div class="boxSeparator">
+		<h1>Session 1 Notes<br>----------------------------------------</h1>
+
+		<p><span id="session1Notes" class="editable large" contenteditable="true"></span></p>
+	</div>
+
+	<div class="boxSeparator">
+		<h1>Session 2 Notes<br>----------------------------------------</h1>
+
+		<p><span id="session2Notes" class="editable large" contenteditable="true"></span></p>
+	</div>
+
+	<div class="boxSeparator">
+		<h1>Session 3 Notes<br>----------------------------------------</h1>
+
+		<p><span id="session3Notes" class="editable large" contenteditable="true"></span></p>
+	</div>
+
+	<script>
+		const idArray = ["session1Notes", "session2Notes", "session3Notes"];
+
+		document.getElementById('save').onclick = function() {
+			for (let i = 0; i < idArray.length; i++) {
+				localStorage.setItem("" + idArray[i] + "Value", document.getElementById(idArray[i]).innerHTML)
+				console.log("set item data for" + idArray[i]);
+			}
+		};
+
+		window.onload = function() {
+			for (let i = 0; i < idArray.length; i++) {
+				var currentText = localStorage.getItem("" + idArray[i] + "Value");
+				document.getElementById(idArray[i]).innerHTML = currentText;
+			}
+		}
+	</script>
+</body>
+</html>
