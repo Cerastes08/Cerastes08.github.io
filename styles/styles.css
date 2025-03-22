@@ -1,0 +1,162 @@
+body {
+	margin: 0px;
+	background-color: #484EA2;
+}
+
+.navbar {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background: #3C3E4D;
+    background-blend-mode: darken;
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu {
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	display: block;
+    list-style-type: none;
+}
+
+.menuItem {
+	float: left;
+
+	a {
+		font: 100% Verdana, Arial, serif;
+		padding: 23px 16px;
+		display: block;
+		text-decoration: none;
+        color: white;
+	}
+
+	a:hover:not(.active) {
+  		background-color: #202129;
+	}
+
+	img {
+		display: block;
+		padding: 10px;
+	}
+}
+
+.active {
+	background-color: #F7C61B;
+}
+
+.boxSeparator {
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 10px;
+	background-color: #9597BA;
+}
+
+h1 {
+	margin-bottom: 0px;
+	text-align: center;
+	font: 300% Verdana, Arial, serif;
+	font-weight: bold;
+}
+
+p {
+	margin-top: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	font: 100% Verdana, Arial, serif;
+}
+
+dt {
+	margin-top: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
+	font: 100% Verdana, Arial, serif;
+}
+
+dd {
+	margin-bottom: 5px;
+	font: 100% Verdana, Arial, serif;
+}
+
+h2 {
+	margin-bottom: 0px;
+	text-align: center;
+	font: 200% Verdana, Arial, serif;
+	font-weight: bold;
+}
+
+.icon {
+	overflow: hidden;
+	width: 45px;
+	height: 45px;
+}
+
+.menuItemRight {
+	float: right;
+
+	a {
+		font: 100% Verdana, Arial, serif;
+		padding: 23px 16px;
+		display: block;
+		text-decoration: none;
+        color: white;
+	}
+
+	a:hover:not(.active) {
+  		background-color: #202129;
+	}
+
+	button {
+		border: none;
+		background-color: #3C3E4D;
+		font: 100% Verdana, Arial, serif;
+		cursor: pointer;
+		color: white;
+		padding: 23px 16px;
+		transition: background-color 0.05s ease-in;
+	}
+
+	button:hover {
+		background-color: #202129;
+	}
+
+	button:active {
+		background-color: #F7C61B;
+	}
+}	
+
+.editable {
+	display: inline-block;
+	width: 200px;
+	height: 25px;
+	overflow: auto;
+	background-color: #6C6E87;
+	vertical-align: bottom;
+	align-content: baseline;
+}
+
+.small {
+	width: 25px;
+	overflow: hidden;
+}
+
+.large {
+	height: 250px;
+	width: 950px;
+}
+
+p:not(.left) {
+	text-align: center;
+}
+
+.conceptArt {
+	height: 300px;
+	width: 300px;
+}
